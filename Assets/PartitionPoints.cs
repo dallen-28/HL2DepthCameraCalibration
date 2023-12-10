@@ -77,10 +77,10 @@ public class PartitionPoints : MonoBehaviour
             foreach (CalibrationPointPair pointPair in subList)
             {
 
-                pointPair.pluginSpherePrefab.GetComponent<Renderer>().material.color = randomColor;
+                //pointPair.pluginSpherePrefab.GetComponent<Renderer>().material.color = randomColor;
                 //pointPair.pluginSpherePrefab.SetActive(false);
                 //pointPair.opticalSpherePrefab.SetActive(false);
-                pointPair.opticalSpherePrefab.GetComponent<Renderer>().material.color = randomColor2;
+               // pointPair.opticalSpherePrefab.GetComponent<Renderer>().material.color = randomColor2;
                 pointPair.opticalSpherePrefab.transform.parent = HololensToDepth.transform;
                 pointPair.opticalSpherePrefab.transform.localPosition = pointPair.opticalPoint;
             }
