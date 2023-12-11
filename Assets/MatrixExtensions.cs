@@ -1,3 +1,5 @@
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Complex;
 using UnityEngine;
 
 public static class MatrixExtensions
@@ -32,5 +34,9 @@ public static class MatrixExtensions
         position.y = matrix.m13;
         position.z = matrix.m23;
         return position;
+    }
+    public static Vector3 ToVector3(this Matrix<double> matrix)
+    {
+        return new Vector3((float)matrix[0, 0], (float)matrix[1, 0], (float)matrix[2, 0]);
     }
 }

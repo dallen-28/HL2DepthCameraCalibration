@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Complex32;
 
 public class MonteCarloSimulation : MonoBehaviour
 {
@@ -76,10 +79,33 @@ public class MonteCarloSimulation : MonoBehaviour
         return centroid;
     }
 
-    // Get Optimal Rotation matrix
-    Quaternion GetOptimalRotation(Vector3[] pluginPoints, Vector3[] opticalPoints)
-    {
-        return Quaternion.identity;
-    }
+
+
+    //Matrix4x4 CalculateRotationMatrix(Vector3[] source, Vector3[] target)
+    //{
+    //    // Convert Vector3 arrays to MathNet.Numerics matrices
+    //    Matrix<double> sourceMatrix = DenseMatrix.OfColumnArrays(source.Select(v => new[] { v.x, v.y, v.z }));
+    //    Matrix<double> targetMatrix = DenseMatrix.OfColumnArrays(target.Select(v => new[] { v.x, v.y, v.z }));
+
+    //    // Perform Singular Value Decomposition
+    //    var svd = sourceMatrix.Svd(true);
+
+    //    // Calculate rotation matrix using U, Vt matrices from SVD
+    //    Matrix<double> rotationMatrix = svd.U * svd.VT;
+
+    //    // Convert rotationMatrix to Unity's Matrix4x4 format
+    //    Matrix4x4 unityRotationMatrix = new Matrix4x4();
+    //    for (int i = 0; i < 3; i++)
+    //    {
+    //        for (int j = 0; j < 3; j++)
+    //        {
+    //            unityRotationMatrix[i, j] = (float)rotationMatrix[i, j];
+    //        }
+    //    }
+    //    unityRotationMatrix.m33 = 1f;
+
+    //    return unityRotationMatrix;
+    //}
+
     
 }

@@ -8,18 +8,28 @@ using UnityEngine;
 
 public class SimulationController : MonoBehaviour
 {
+    public GameObject HololensToDepth;
+
     public DisplayPoints displayPoints;
     public PartitionPoints partitionPoints;
+
+    private KabschAlgorithm kabschAlgorithm;
 
     // Start is called before the first frame update
     void Start()
     {
+        kabschAlgorithm = new KabschAlgorithm();
+
         displayPoints.ParseCSV();
         partitionPoints.Initialize(displayPoints.masterList, displayPoints.maxPoints, displayPoints.minPoints);
         partitionPoints.Partition();
         partitionPoints.DisplayColouredPartitions();
+        Matrix4x4 matrix = kabschAlgorithm.CalculateTransformationMatrix(displayPoints.masterList);
+        HololensToDepth.transform.SetPositionAndRotation(MatrixExtensions.ExtractPosition(matrix), MatrixExtensions.ExtractRotation(matrix));
 
-        Debug.Log(partitionPoints.partitionedList.ToString());
+
+
+        //Debug.Log(partitionPoints.partitionedList.ToString());
 
     }
 
