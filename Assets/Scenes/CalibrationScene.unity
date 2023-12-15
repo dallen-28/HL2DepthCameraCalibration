@@ -267,6 +267,7 @@ MonoBehaviour:
   HololensToDepth: {fileID: 1660641881}
   displayPoints: {fileID: 693641369}
   partitionPoints: {fileID: 1221259698}
+  monteCarloSimulation: {fileID: 2080572740}
 --- !u!1 &216813294
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,8 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7009f1ed60c6044b826fe39d8ae788c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  registrationIterations: 100000
-  monteCarloIterations: 500
+  monteCarloIterations: 5000
 --- !u!4 &543450652583382183
 Transform:
   m_ObjectHideFlags: 0

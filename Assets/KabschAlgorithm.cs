@@ -5,18 +5,8 @@ using MathNet.Numerics.LinearAlgebra.Double;
 
 public class KabschAlgorithm : MonoBehaviour
 {
-    public Matrix4x4 CalculateTransformationMatrix(List<CalibrationPointPair> masterList)
+    public Matrix4x4 CalculateTransformationMatrix(List<Vector3> sourcePoints, List<Vector3> targetPoints)
     {
-        List<Vector3> sourcePoints = new List<Vector3>();
-        List<Vector3> targetPoints = new List<Vector3>();
-
-        for(int i = 0; i < 12; i++)
-        {
-            int randomNum = Random.Range(0,69);
-            sourcePoints.Add(masterList[randomNum].opticalPoint);
-            targetPoints.Add(masterList[randomNum].pluginPoint);
-        }
-
         if (sourcePoints.Count != targetPoints.Count || sourcePoints.Count < 3)
         {
             Debug.LogError("Invalid point sets for Kabsch algorithm.");
