@@ -586,10 +586,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f6dee6092670a45a7ea5557ceefdea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  column1: {x: 0.763069, y: -0.62094, z: -0.179332, w: 0}
-  column2: {x: 0.298931, y: 0.0930669, z: 0.949726, w: 0}
-  column3: {x: -0.573032, y: -0.778314, z: 0.256635, w: 0}
-  column4: {x: -0.0559593, y: -0.0818768, z: -0.0441415, w: 1}
+  column1: {x: 0.217095, y: 0.655902, z: 0.722954, w: 0}
+  column2: {x: -0.889378, y: 0.438164, z: -0.130456, w: 0}
+  column3: {x: -0.402339, y: -0.614659, z: 0.678468, w: 0}
+  column4: {x: -0.0588083, y: -0.088121, z: -0.0672771, w: 1}
   targetMatrix:
     e00: 0
     e01: 0
@@ -651,7 +651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7009f1ed60c6044b826fe39d8ae788c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monteCarloIterations: 5000
+  monteCarloIterations: 100
+  startingNumPoints: 11
+  endingNumPoints: 12
+  HololensToDepth: {fileID: 1660641881}
 --- !u!4 &543450652583382183
 Transform:
   m_ObjectHideFlags: 0

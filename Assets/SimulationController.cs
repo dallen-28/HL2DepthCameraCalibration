@@ -13,7 +13,6 @@ public class SimulationController : MonoBehaviour
     public DisplayPoints displayPoints;
     public PartitionPoints partitionPoints;
     public MonteCarloSimulation monteCarloSimulation;
- 
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,10 @@ public class SimulationController : MonoBehaviour
         partitionPoints.Initialize(displayPoints.masterList, displayPoints.maxPoints, displayPoints.minPoints);
         partitionPoints.Partition();
         partitionPoints.DisplayColouredPartitions();
-        monteCarloSimulation.RunSimulationRandom(partitionPoints.masterList, partitionPoints.partitionedList[13]);
+        //Matrix4x4 matrix = kabschAlgorithm.CalculateTransformationMatrix(displayPoints.masterList);
+        //HololensToDepth.transform.SetPositionAndRotation(MatrixExtensions.ExtractPosition(matrix), MatrixExtensions.ExtractRotation(matrix));
+        //monteCarloSimulation.RunSimulationRandom(partitionPoints.masterList, partitionPoints.partitionedList[4]);
+        monteCarloSimulation.RunSimulationPartitioned(partitionPoints.partitionedList, partitionPoints.partitionedList[14]);
 
         //Debug.Log(partitionPoints.partitionedList.ToString());
 
