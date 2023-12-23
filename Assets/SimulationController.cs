@@ -26,7 +26,7 @@ public class SimulationController : MonoBehaviour
         //Matrix4x4 matrix = kabschAlgorithm.CalculateTransformationMatrix(displayPoints.masterList);
         //HololensToDepth.transform.SetPositionAndRotation(MatrixExtensions.ExtractPosition(matrix), MatrixExtensions.ExtractRotation(matrix));
         //monteCarloSimulation.RunSimulationRandom(partitionPoints.masterList, partitionPoints.partitionedList[4]);
-        monteCarloSimulation.RunSimulationPartitioned(partitionPoints.partitionedList, partitionPoints.partitionedList[14]);
+        monteCarloSimulation.RunSimulationPartitioned(partitionPoints.partitionedList, partitionPoints.partitionedList[4]);
 
         //Debug.Log(partitionPoints.partitionedList.ToString());
 

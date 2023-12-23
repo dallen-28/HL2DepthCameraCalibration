@@ -25,12 +25,37 @@ public class MonteCarloSimulation : MonoBehaviour
 
         // NEed to make sure we don't use same point pairs for TRE calculation as we are for calibration
         //calibrationQuadrantIndeces = new List<int>() {7,9,12,2,14,1,17,6,10 };
-        
+
         // Separate graphs for each configuration
         //Tre = [, 5, 12, 14, 1]
-        calibrationQuadrantIndeces = new List<int>() { 0,2,7,15,10,17,6,9,8,11,3,16};
+        //calibrationQuadrantIndeces = new List<int>() { 0,2,7,15,10,17,6,9,8,11,3,16};
         //calibrationQuadrantIndeces = new List<int>() { 7, 9, 12, 2, 14, 1, 17, 6, 10 };
         //calibrationQuadrantIndeces = new List<int>() { 7, 9, 12, 2, 14, 1, 17, 6, 10 };
+
+        // Different configurations of 6 points
+        //calibrationQuadrantIndeces = new List<int>() {6,1,8,9,16,11 };
+        //calibrationQuadrantIndeces = new List<int>() { 0,7,2,15,10,17 };
+        //calibrationQuadrantIndeces = new List<int>() { 3,1,8,14,16,9 };
+
+        // Only 1st plane
+        //calibrationQuadrantIndeces = new List<int>() {6,0,7,5,2,1  };
+        //calibrationQuadrantIndeces = new List<int>() { 3,8,5,7,0,2};
+
+        // Only second plane 
+        //calibrationQuadrantIndeces = new List<int>() { 15,9,16,14,11,10 };
+        //calibrationQuadrantIndeces = new List<int>() { 12,17,14,16,9,11 };
+
+        // All quadrants except TRE
+        //calibrationQuadrantIndeces = new List<int>() {0,1,2,3,5,6,7,8,9,10,11,12,14,15,16,17 };
+
+        // Configuration from notebook 
+        calibrationQuadrantIndeces = new List<int>() {8,3,1,16,9,14,15,2,11,6,10,7,17,0,12,5,13 };
+
+        // 4 points
+        //calibrationQuadrantIndeces = new List<int>() { 6,0,8,2};
+        //calibrationQuadrantIndeces = new List<int>() { 6,2,9,17 };
+        //calibrationQuadrantIndeces = new List<int>() { 0,8,15,11 };
+        //calibrationQuadrantIndeces = new List<int>() { 15,17,9,11 };
 
     }
 
@@ -116,6 +141,9 @@ public class MonteCarloSimulation : MonoBehaviour
             List<float> treLine = new List<float>();
             for (int i = 0; i < monteCarloIterations; i++)
             {
+                sourcePoints.Clear();
+                targetPoints.Clear();
+
                 for (int j = 0; j < numPoints; j++)
                 {
                     // Pick a random number corresponding to the count in each quadrant

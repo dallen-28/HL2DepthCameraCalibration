@@ -651,9 +651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7009f1ed60c6044b826fe39d8ae788c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monteCarloIterations: 100
-  startingNumPoints: 11
-  endingNumPoints: 12
+  monteCarloIterations: 10000
+  startingNumPoints: 5
+  endingNumPoints: 17
   HololensToDepth: {fileID: 1660641881}
 --- !u!4 &543450652583382183
 Transform:
