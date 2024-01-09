@@ -24,9 +24,15 @@ public class SimulationController : MonoBehaviour
         partitionPoints.Partition();
         partitionPoints.DisplayColouredPartitions();
         //Matrix4x4 matrix = kabschAlgorithm.CalculateTransformationMatrix(displayPoints.masterList);
-        //HololensToDepth.transform.SetPositionAndRotation(MatrixExtensions.ExtractPosition(matrix), MatrixExtensions.ExtractRotation(matrix));
+        //HololensToDepth.transform.SetPositionAndRotation(MatrixExtensions.ExtractPosn(matrix), MatrixExtensions.ExtractRotation(matrix));
         //monteCarloSimulation.RunSimulationRandom(partitionPoints.masterList, partitionPoints.partitionedList[4]);
+        System.DateTime before = System.DateTime.Now;
+        Debug.Log(before.ToString());
         monteCarloSimulation.RunSimulationPartitioned(partitionPoints.partitionedList, partitionPoints.partitionedList[4]);
+        System.DateTime after = System.DateTime.Now;
+        Debug.Log(after.ToString());
+        System.TimeSpan duration = after.Subtract(before);
+        Debug.Log("Duration in seconds: " + duration.Milliseconds/1000.0f);
 
         //Debug.Log(partitionPoints.partitionedList.ToString());
 
